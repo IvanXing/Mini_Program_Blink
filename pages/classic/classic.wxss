@@ -1,0 +1,50 @@
+/* pages/classic/classic.wxss */
+
+.chunk{
+  width: 150px;
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 400px;
+  background-color: #999999;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* flex flexible box 弹性盒子 */
+
+/* flex container   flex item */
+
+/* flex-direction的四个属性: row row-reverse  column column-reverse */
+
+/* flex reverse的原理  宽度100% 高度自适应 */
+
+/* 注意reverse和 flex-end  start的搭配 */
+
+/* justify-content的几个属性 1.flex-start  2.flex-end  3.center 4.space-between 5.space-around*/
+
+/* 主轴和交叉轴 justify-content 和 align-item*/
+
+/* align-items的属性： 1. flex-end 2.flex-start 3.center, 4.baseline 5.stretch */
+
+/* stretch 没有设置高度的情况下 进行拉伸 */
+/* baseline 子元素中的文字的底线对齐 */
+
+.color1{
+  background-color: brown;
+  font-size: 26px;
+}
+
+.color2{
+  background-color: aqua;
+  font-size: 20px;
+}
+
+.color3{
+  background-color: blue;
+  font-size: 18px;
+}

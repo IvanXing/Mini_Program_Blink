@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/classic/classic"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "微信接口功能演示",
+    "navigationStyle": "default",
+    "backgroundColor": "#e84e40",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}
