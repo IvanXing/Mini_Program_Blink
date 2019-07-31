@@ -18,7 +18,7 @@ Page({
 
     //正常请求
     wx.request({
-      url: 'http://bl.7yue.pro/v1//classic/latest',
+      url: 'http://bl.7yue.pro/v1/classic/latest',
       header:{
         appkey:'ofGdI94yWKpfxpTJ'
       },
@@ -33,20 +33,20 @@ Page({
     })
 
     //promise版本(解决异步嵌套)
-    // let promise = new Promise((resolve, reject) => {
-    //   wx.request({
-    //     url: 'http://bl.7yue.pro/v1//classic/latest',
-    //     header: {
-    //       appkey: 'ofGdI94yWKpfxpTJ'
-    //     },
-    //     success: (res) => {
-    //       resolve(res)
-    //     }
-    //   })
-    // })
-    // promise.then((res) => {
-    //   console.log(res)
-    // })
+    let promise = new Promise((resolve, reject) => {
+      wx.request({
+        url: 'http://bl.7yue.pro/v1/classic/latest',
+        header: {
+          appkey: 'ofGdI94yWKpfxpTJ'
+        },
+        success: (res) => {
+          resolve(res)
+        }
+      })
+    })
+    promise.then((res) => {
+      console.log(res)
+    })
 
 
   },
