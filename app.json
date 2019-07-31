@@ -2,7 +2,7 @@
   "pages": [
     "pages/flex/flex"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "叠莫",
@@ -10,5 +10,6 @@
     "backgroundColor": "#e84e40",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

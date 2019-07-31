@@ -8,16 +8,16 @@
 .container {
   display: flex;
   flex-direction: row-reverse;
-  height: 400px;
-  background-color: #999999;
+  height: 400px;   /*设置容器高度，防止自适应 */
+  background-color: #999999;   /*设置容器背景颜色 */
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: wrap;  /*设置了高度 底部会平均分配  不设置高度就挨着了*/
 }
 
-/* flex flexible box 弹性盒子 */
+/* flex flexible box 弹性盒子(消除块状特性) */
 
-/* flex container   flex item */
+/* flex container   flex item  对容器下的子元素采用弹性布局*/
 
 /* flex-direction的四个属性: row row-reverse  column column-reverse */
 
@@ -25,14 +25,18 @@
 
 /* 注意reverse和 flex-end  start的搭配 */
 
-/* justify-content的几个属性 1.flex-start  2.flex-end  3.center 4.space-between 5.space-around*/
+/* justify-content（子元素对齐方向）的几个属性 1.flex-start  2.flex-end  3.center 4.space-between 5.space-around（每一个item两侧均相等）*/
 
-/* 主轴和交叉轴 justify-content 和 align-item*/
+/* 主轴和交叉轴(另个方向) justify-content 和 align-item*/
 
 /* align-items的属性： 1. flex-end 2.flex-start 3.center, 4.baseline 5.stretch */
 
-/* stretch 没有设置高度的情况下 进行拉伸 */
-/* baseline 子元素中的文字的底线对齐 */
+/* stretch 没有设置子元素高度的情况下 进行拉伸 */
+/* baseline 子元素中的 文字的底线对齐 文字基线对齐*/
+
+/* 总元素宽度大于屏幕宽度，flex会平均分配子元素宽度，不会主动换行 */
+
+/* flex-wrap 1.nowrap(不换行) 2.wrap(换行) 3.wrap-reverse(颠倒)*/
 
 .color1{
   background-color: brown;
