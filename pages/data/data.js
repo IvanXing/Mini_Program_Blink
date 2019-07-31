@@ -1,4 +1,5 @@
-// pages/classic/classic.js
+// pages/data/data.js
+
 Page({
 
   /**
@@ -19,34 +20,34 @@ Page({
     //正常请求
     wx.request({
       url: 'http://bl.7yue.pro/v1//classic/latest',
-      header:{
-        appkey:'ofGdI94yWKpfxpTJ'
+      header: {
+        appkey: 'ofGdI94yWKpfxpTJ'
       },
       // success:function(res){
       //   console.log(res)
       //   //console.log(this.data.test)   //null
       //   console.log(that.data.test)
       // }
-      success: (res)=>{
+      success: (res) => {
         console.log(this.data.test)   //箭头函数定义时绑定 非运行时
       }
     })
 
     //promise版本(解决异步嵌套)
-    // let promise = new Promise((resolve, reject) => {
-    //   wx.request({
-    //     url: 'http://bl.7yue.pro/v1//classic/latest',
-    //     header: {
-    //       appkey: 'ofGdI94yWKpfxpTJ'
-    //     },
-    //     success: (res) => {
-    //       resolve(res)
-    //     }
-    //   })
-    // })
-    // promise.then((res) => {
-    //   console.log(res)
-    // })
+    let promise = new Promise((resolve, reject) => {
+      wx.request({
+        url: 'http://bl.7yue.pro/v1//classic/latest',
+        header: {
+          appkey: 'ofGdI94yWKpfxpTJ'
+        },
+        success: (res) => {
+          resolve(res)
+        }
+      })
+    })
+    promise.then((res) => {
+      console.log(res)
+    })
 
 
   },

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/classic/classic",
+    "pages/data/data",
     "pages/flex/flex"
   ],
   "window": {
