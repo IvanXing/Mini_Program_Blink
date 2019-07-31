@@ -1,0 +1,24 @@
+.container {
+  /* display: flex;    容器设置成flex只是子元素消除块状特性，容器本身还是块 */
+  display: inline-flex;
+  flex-direction: row;
+  padding: 10rpx;
+  /* width: 80rpx;  固定宽度，但是数字会变 不能定死宽度 */
+  /* 自适应也有一定的问题，数字位数变化也会跳动变宽度 */
+}
+
+.container image {
+  width: 32rpx;
+  height: 28rpx;
+  /* position: absolute; 会脱离文档流*/
+}
+
+.container text{
+  /* font-family: "PingFangSC-Thin"; */
+  font-size: 24rpx;
+  line-height: 24rpx;  /*字体上下有间距，设置行高和字一样大 组件引用时消除无意义的空白*/
+  color: #bbbbbb;
+  position: relative;
+  bottom: 10rpx;
+  left: 6rpx;
+}

@@ -1,0 +1,6 @@
+<!--点击喜欢组件-->
+<!-- bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。 -->
+<view bind:tap="onLike" class="container">
+  <image src="{{like ? yesSrc : noSrc}}"></image>
+  <text>{{count}}</text>
+</view>
