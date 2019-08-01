@@ -1,1 +1,3 @@
-<v-like like="{{classic.like_status}}" count="{{classic.fav_nums}}"/>
+<!-- bind自定义事件的名字like -->
+<v-like bind:like="onLike" like="{{classic.like_status}}" count="{{classic.fav_nums}}"/>
+<v-movie img="{{classic.image}}" content="{{classic.content}}"/>

@@ -36,6 +36,9 @@ Component({
    */
   methods: {
     onLike:function(event){
+
+      console.log('组件中onLike', event)
+      //自定义事件
       let like = this.properties.like;
       let count = this.properties.count;
       count = like ? count-1 : count+1;
@@ -43,6 +46,14 @@ Component({
         count: count,
         like: !like,
       })
+
+      //标识用户点赞还是取消点赞
+      let behavior = this.properties.like ? 'like' : 'cancel';
+      //激活一个事件（第一个参数 自定义名称 第二个参数 自定义属性（event的detail属性）第三个参数 一般不用 ）
+      this.triggerEvent('like', {
+        behavior: behavior
+      }, {})
+
     }
   }
 })
