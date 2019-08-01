@@ -1,22 +1,22 @@
-import {HTTP} from '../../util/http.js'
-let http =  new HTTP()
+import {ClassicModel} from '../../models/classic.js'
+let classic =  new ClassicModel()
 
 Page({
 
   //页面初始数据
   data: {
-    test: 1
+    classic: null,
   },
 
 
   //生命周期函数--监听页面加载
   onLoad: function (options) {
-    http.request({
-      url: 'classic/latest',
-      success:(res)=>{
-        console.log(res);
-      }
-    })
+   classic.getLatest((res)=>{
+     console.log(this.data)
+     this.setData({
+       classic: res,
+     })
+   })
 
   },
 

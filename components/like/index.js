@@ -22,7 +22,7 @@ Component({
    */
 
  // 组件的封装性 开放性（哪些是内部数据不开放，哪些开放）  粒度
-
+ //data私有的 properties外部可以访问
   data: {
     // like: true,
     // count: 99,
