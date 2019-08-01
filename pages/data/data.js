@@ -29,7 +29,7 @@ Page({
       //   console.log(that.data.test)
       // }
       success: (res) => {
-        console.log(this.data.test)   //箭头函数定义时绑定 非运行时
+        console.log(this.data.test)   //箭头函数定义时绑定 非运行时  默认get
       }
     })
 

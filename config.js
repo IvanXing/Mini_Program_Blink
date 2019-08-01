@@ -3,3 +3,10 @@ const config = {
   api_base_url: 'http://bl.7yue.pro/v1/',
   appkey: 'ofGdI94yWKpfxpTJ'
 }
+
+
+// export let fun1 = function(){
+
+// }
+
+export {config}

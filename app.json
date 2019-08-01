@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/classic/classic",
+    "pages/dataSecond/dataSecond",
     "pages/data/data",
     "pages/flex/flex"
   ],

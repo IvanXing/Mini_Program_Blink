@@ -1,5 +1,5 @@
-import {HTTP} from '../../util/http.js'
-let http =  new HTTP()
+import { HTTP } from '../../util/http.js'
+let http = new HTTP()
 
 Page({
 
@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
     http.request({
       url: 'classic/latest',
-      success:(res)=>{
+      success: (res) => {
         console.log(res);
       }
     })
