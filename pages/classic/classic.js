@@ -8,6 +8,8 @@ Page({
   //页面初始数据
   data: {
     classic: null,
+    latest: true,    //当前接口获取的就是最新一期 
+    first: false
   },
 
 

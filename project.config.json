@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.8.0",
 	"appid": "wx03d07d426b5e213a",
 	"projectname": "Mini_Program_Blink",
 	"debugOptions": {
