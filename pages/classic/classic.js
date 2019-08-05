@@ -16,10 +16,10 @@ Page({
   //生命周期函数--监听页面加载
   onLoad: function (options) {
     classicModel.getLatest((res)=>{
-     console.log('----------', this.data)
      this.setData({
        classic: res,
      })
+     console.log('||result||', this.data)
    })
 
   },
@@ -30,6 +30,27 @@ Page({
     console.log('参数', this.data)
     likeModel.like(behavior, this.data.classic.id,
       this.data.classic.type)
+  },
+
+  onNext: function (event) {
+    this._updateClassic('next')
+  },
+
+  onPrevious: function (event) {
+    this._updateClassic('previous')
+  },
+
+
+  //获取上一期或下一期
+  _updateClassic: function (nextOrPrevious) {
+    const index = this.data.classic.index
+    classicModel.getClassic(index, nextOrPrevious, (res) => {
+      this.setData({
+        classic: res,
+        latest: classicModel.isLatest(res.index),
+        first: classicModel.isFirst(res.index)
+      })
+    })
   },
 
   //生命周期函数--监听页面初次渲染完成

@@ -1,5 +1,5 @@
 .container {
-    width: 100%;
+    width: 100%;   /* 不设置100%就是自适应的 */
     display: flex;
     flex-direction: column;
     align-items: center;
