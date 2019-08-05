@@ -9,7 +9,9 @@ Page({
   data: {
     classic: null,
     latest: true,    //当前接口获取的就是最新一期 
-    first: false
+    first: false,
+    likeCount: 0,
+    likeStatus: false
   },
 
 
@@ -18,6 +20,8 @@ Page({
     classicModel.getLatest((res)=>{
      this.setData({
        classic: res,
+       likeCount: res.fav_nums,
+       likeStatus: res.like_status
      })
      console.log('||result||', this.data)
    })
@@ -25,9 +29,7 @@ Page({
   },
 
   onLike: function(event){
-    console.log('页面触发onLike', event);
     let behavior = event.detail.behavior;
-    console.log('参数', this.data)
     likeModel.like(behavior, this.data.classic.id,
       this.data.classic.type)
   },
@@ -45,12 +47,24 @@ Page({
   _updateClassic: function (nextOrPrevious) {
     const index = this.data.classic.index
     classicModel.getClassic(index, nextOrPrevious, (res) => {
+      this._getLikeStatus(res.id, res.type)
       this.setData({
         classic: res,
         latest: classicModel.isLatest(res.index),
         first: classicModel.isFirst(res.index)
       })
     })
+  },
+
+  //单独获取点赞数
+  _getLikeStatus: function (artID, category) {
+    likeModel.getClassicLikeStatus(artID, category,
+      (res) => {
+        this.setData({
+          likeCount: res.fav_nums,
+          likeStatus: res.like_status
+        })
+      })
   },
 
   //生命周期函数--监听页面初次渲染完成
