@@ -5,7 +5,8 @@
     "pages/book/book",
     "pages/dataSecond/dataSecond",
     "pages/data/data",
-    "pages/flex/flex"
+    "pages/flex/flex",
+    "pages/book-detail/book-detail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

@@ -11,7 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    books:[]
   },
 
   /**
@@ -31,17 +31,25 @@ Page({
     // )
 
     //正确用法（异步调用都是平行写法 return promise）
+    // bookModel.getHotList()
+    //   .then(res => {
+    //     console.log(res)
+    //     return bookModel.getMyBookCount()
+    //   })
+    //   .then(res => {
+    //     console.log(res)
+    //     return bookModel.getHotList()
+    //   })
+    //   .then(res => {
+    //     console.log(res)
+    //   })
+
+    //获取热门书籍
     bookModel.getHotList()
-      .then(res => {
-        console.log(res)
-        return bookModel.getMyBookCount()
-      })
-      .then(res => {
-        console.log(res)
-        return bookModel.getHotList
-      })
-      .then(res => {
-        console.log(res)
+      .then(res=>{
+        this.setData({
+          books: res
+        })
       })
  
 
