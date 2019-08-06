@@ -1,4 +1,10 @@
-// pages/book/book.js
+import{
+  BookModel
+} from '../../models/book.js'
+
+const bookModel = new BookModel()
+
+
 Page({
 
   /**
@@ -12,6 +18,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    // promise错误用法 依然回调嵌套
+    // const hotList = bookModel.getHotList();
+    // hotList.then(
+    //   res=>{
+    //     console.log('hotbook', res)
+    //     bookModel.getMyBookCount().then(res=>{
+    //       console.log('mybookcount', res)
+    //     })
+    //   }
+    // )
+
+    //正确用法（异步调用都是平行写法 return promise）
+    bookModel.getHotList()
+      .then(res => {
+        console.log(res)
+        return bookModel.getMyBookCount()
+      })
+      .then(res => {
+        console.log(res)
+        return bookModel.getHotList
+      })
+      .then(res => {
+        console.log(res)
+      })
+ 
 
   },
 
