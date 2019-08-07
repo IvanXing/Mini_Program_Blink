@@ -1,11 +1,19 @@
-// pages/book-detail/book-detail.js
+import{
+  BookModel
+}from '../../models/book.js'
+
+const bookModel = new BookModel()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    book: null,
+    comments: [],
+    likeStatus: false,
+    likeCount: 0,
   },
 
   /**
@@ -13,7 +21,32 @@ Page({
    */
   onLoad: function (options) {
     //上页传入参数都在options中
-    const bid = options.bid
+    const bid = options.bid;
+    const detail = bookModel.getDetail(bid);
+    const comments = bookModel.getComments(bid);
+    const likeStatus = bookModel.getLikeStatus(bid);
+
+    detail.then(res=>{
+      this.setData({
+        book: res
+      })
+      console.log('详情', this.data.book)
+    })
+
+    comments.then(res => {
+      this.setData({
+        comments: res.comments
+      })
+      console.log('评论', this.data.comments)
+    })
+
+    likeStatus.then(res => {
+      this.setData({
+        likeStatus: res.like_status,
+        likeCount: res.fav_nums,
+      })
+      console.log('星星', res)
+    })
   },
 
   /**

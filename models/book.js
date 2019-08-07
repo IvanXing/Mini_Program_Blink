@@ -29,18 +29,21 @@ class BookModel extends HTTP {
     })
   }
 
+  //获取书籍详细信息
   getDetail(bid) {
     return this.request({
       url: `book/${bid}/detail`
     })
   }
 
+  //点赞状态
   getLikeStatus(bid) {
     return this.request({
       url: `/book/${bid}/favor`
     })
   }
 
+  //文章评论信息
   getComments(bid) {
     return this.request({
       url: `book/${bid}/short_comment`
