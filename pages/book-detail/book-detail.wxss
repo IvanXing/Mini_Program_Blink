@@ -71,6 +71,8 @@
     color: #aaa;
 }
 
+/* v-tag:nth-child(1)有空格不生效 此种写法必须知道组件的细节*/
+/* 子元素选择器和后代选择器 */
 /* .comment-container>v-tag:nth-child(1)>view {
     background-color: #fffbdd;
 }
@@ -78,6 +80,8 @@
 .comment-container>v-tag:nth-child(2)>view {
     background-color: #eefbff;
 } */
+
+/* 作用在组件中外部样式 加important */
 .ex-tag1 {
     background-color: #fffbdd !important;
 }

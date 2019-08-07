@@ -1,4 +1,7 @@
-<view class="container">
-  <text >{{text}}</text>
-   <slot name="after"></slot>
+<view class="container tag-class">
+  <text>{{text}}</text>
+  <!-- 插槽需要一个名字 slot可以传递数据 标签-->
+  <slot name="after"></slot>
 </view>
+
+<!-- container普通样式 tag-class外部样式 -->
