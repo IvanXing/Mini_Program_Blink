@@ -25,6 +25,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //评论处点击传入事件
+    onTap(event) {
+      this.triggerEvent('tapping', {
+        text: this.properties.text
+      })
+    }
+
 
   }
 })

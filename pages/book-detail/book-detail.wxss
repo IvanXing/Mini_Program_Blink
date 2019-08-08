@@ -48,7 +48,7 @@
     margin-bottom: 20rpx;
 }
 
-/* 短评自动换行，bottom生效 */
+/* 短评色块自动换行，bottom生效 */
 .comment-container {
     display: flex;
     flex-direction: row;
