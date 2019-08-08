@@ -1,6 +1,6 @@
-<view class="container">
+<view wx:if="{{!searching}}" class="container">
     <view class="header">
-        <view class='box'>
+        <view class='box' bind:tap="onSearching">
             <image src="/images/icon/search.png" />
             <text>搜索书籍</text>
         </view>
@@ -17,3 +17,5 @@
 
 <!-- 若wx:for遍历的是object，wx:key的值就是object的一个属性，数字或者字符串 -->
 <!-- 若遍历的是数字或者字符串，wx:key="*this" -->
+
+<v-search wx:if="{{searching}}" bind:cancel="onCancel" />
