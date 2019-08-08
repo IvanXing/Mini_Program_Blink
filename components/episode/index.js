@@ -6,7 +6,7 @@ Component({
   properties: {
     index: {
       type: String,
-      observer: function(newVal, oldVal, changePath){
+      observer: function(newVal, oldVal, changePath){    //数值改变会触发observer 默认传递三个参数
         let val = newVal < 10 ? '0'+newVal : newVal;
         // 不要再observer中修改自身属性值 
         // this.setData({index: val })  //更新index,index属于属性又触发observer 递归调用  08->8

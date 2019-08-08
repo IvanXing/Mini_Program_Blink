@@ -48,7 +48,7 @@
     margin-bottom: 20rpx;
 }
 
-/* 标签换行，bottom生效 */
+/* 短评自动换行，bottom生效 */
 .comment-container {
     display: flex;
     flex-direction: row;
@@ -59,11 +59,11 @@
     margin-right: 15rpx;
     margin-bottom: 10rpx;
 }
-/* 
+
 .content {
     text-indent: 58rpx;
     font-weight: 500;
-} */
+}
 
 .num {
     margin-left: 10rpx;

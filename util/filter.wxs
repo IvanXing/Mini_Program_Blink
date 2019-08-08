@@ -1,0 +1,19 @@
+//处理评论中的\\n
+var format = function (text) {
+  if (!text) {    //初始化空值return
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g')
+  return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')    //&nbsp是为了text-indent设置段落开头空格 但是text默认不解析空格 
+}
+
+var limit = function (array, length) {
+  return array.slice(0, length)
+}
+
+
+//导出
+module.exports = {
+  format: format,
+  limit: limit
+}
